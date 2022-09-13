@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="yandex_backend_school_2022_java" target="17" />
+      <module name="yandex_backend_school_2022_java" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

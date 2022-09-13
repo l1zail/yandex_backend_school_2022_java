@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "ElementRequest schema",
+  "description": "A ElementRequest",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": {
+        "title": "Elements schema",
+        "description": "An Element",
+        "type": "object",
+        "required": ["id", "type"],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "parentId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "type": {
+            "type": "string",
+            "enum": ["FILE", "FOLDER"]
+          }
+        }
+      }
+    },
+    "updateDate": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": ["items", "updateDate"]
+}
