@@ -13,7 +13,7 @@ public class ImportsUtils {
     public static boolean isValidImports(String importsJson) {
         try {
             JSONObject jsonSchema = new JSONObject(
-                    new JSONTokener(new FileReader("src/main/resources/schemas/imports.json"))
+                    new JSONTokener(new FileReader("yandex_backend_school_2022_java/src/main/resources/schemas/imports.json"))
             );
             JSONObject jsonSubject = new JSONObject(
                     new JSONTokener(importsJson)
