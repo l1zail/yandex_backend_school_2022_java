@@ -18,6 +18,7 @@ public class ElementService {
     private ElementService(@Autowired ElementRepository elementRepository){
         this.elementRepository = elementRepository;
     }
+
     public ElementEntity findById(String id) {
         return elementRepository.findById(id).orElse(null);
     }
@@ -133,6 +134,7 @@ public class ElementService {
             save(file);
         }
     }
+
     private void updateSizeDateUpToTheRootFrom(ElementEntity start, int sizeDelta, LocalDateTime newDate) {
         while (true) {
             if (newDate != null) {
@@ -146,7 +148,6 @@ public class ElementService {
             start = findById(start.getParentId());
         }
     }
-
 
     private void updateFolder(ElementEntity folder) {
         ElementEntity oldFolder = findById(folder.getId());
@@ -170,7 +171,6 @@ public class ElementService {
             save(folder);
         }
     }
-
 
     public void deleteById(String id) {
         if (findById(id).getType() == ElementEntity.ElementType.FILE) {
@@ -206,5 +206,4 @@ public class ElementService {
         }
         elementRepository.deleteById(elementEntity.getId());
     }
-
 }
