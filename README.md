@@ -8,8 +8,10 @@
 - __GET__ updates  
 ---
 ### Развертывание:
-1. git clone https://github.com/l92169/yandex_backend_school_2022_java.git
-2. cd yandex_backend_school_2022_java/yandex_backend_school_2022_java
-3. mvn clean package
-4. sudo docker build -t docker-yandex-1 . 
-5. sudo docker run -d -p 8080:8080 docker-yandex-1
+``` 
+  git clone https://github.com/l92169/yandex_backend_school_2022_java.git  
+  cd yandex_backend_school_2022_java/yandex_backend_school_2022_java  
+  mvn clean package  
+  sudo docker build -t docker-yandex-1 .  
+  sudo docker run -d -p 8080:8080 docker-yandex-1  
+```
