@@ -24,7 +24,7 @@ public class ElementEntity {
     @Column(name = "type")
     private ElementType type;
 
-    @Column(name = "size", nullable = true)
+    @Column(name = "size")
     private Integer size;
 
     @Column(name = "url", nullable = true)

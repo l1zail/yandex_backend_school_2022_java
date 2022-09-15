@@ -86,7 +86,7 @@ public class ElementService {
         }
         ElementEntity parent = findById(file.getParentId());
         while (true) {
-            parent.setSize(parent.getSize() + 1);
+            parent.setSize(parent.getSize() + file.getSize());
             parent.setDate(file.getDate());
             save(parent);
             if (parent.getParentId() == null || existsById(parent.getParentId()) != true) {
@@ -118,15 +118,15 @@ public class ElementService {
             if (oldFile.getParentId() == null) {
                 save(file);
                 if (existsById(file.getParentId())) {
-                    updateSizeDateUpToTheRootFrom(findById(file.getParentId()), 1, file.getDate());
+                    updateSizeDateUpToTheRootFrom(findById(file.getParentId()), file.getSize(), file.getDate());
                 }
             } else {
                 save(file);
                 if (existsById(oldFile.getParentId())) {
-                    updateSizeDateUpToTheRootFrom(findById(oldFile.getParentId()), -1, file.getDate());
+                    updateSizeDateUpToTheRootFrom(findById(oldFile.getParentId()), -file.getSize(), file.getDate());
                 }
                 if (file.getParentId() != null && existsById(file.getParentId())) {
-                    updateSizeDateUpToTheRootFrom(findById(file.getParentId()), 1, file.getDate());
+                    updateSizeDateUpToTheRootFrom(findById(file.getParentId()), file.getSize(), file.getDate());
                 }
             }
         }

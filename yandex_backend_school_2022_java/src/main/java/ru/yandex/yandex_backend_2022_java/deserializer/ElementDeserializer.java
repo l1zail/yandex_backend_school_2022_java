@@ -14,7 +14,7 @@ public class ElementDeserializer implements JsonDeserializer<ElementEntity> {
         elementEntity.setId(elementNode.get("id").getAsString());
         elementEntity.setType(ElementEntity.ElementType.valueOf(elementNode.get("type").getAsString()));
         if (elementEntity.getType() == ElementEntity.ElementType.FILE) {
-            elementEntity.setSize(1);
+            elementEntity.setSize(elementNode.get("size").getAsInt());
         } else {
             elementEntity.setSize(0);
         }

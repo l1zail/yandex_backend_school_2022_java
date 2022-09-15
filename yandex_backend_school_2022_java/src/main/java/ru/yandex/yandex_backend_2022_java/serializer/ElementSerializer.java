@@ -23,7 +23,7 @@ public class ElementSerializer implements JsonSerializer<ElementEntity> {
         } else {
             jsonObject.addProperty("parentId", elementEntity.getParentId());
         }
-        jsonObject.addProperty("date", elementEntity.getDate().format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")));
+        jsonObject.addProperty("date", elementEntity.getDate().format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss'Z'")));
         if (elementEntity.getType() == ElementEntity.ElementType.FILE) {
             jsonObject.add("children", JsonNull.INSTANCE);
         } else {
